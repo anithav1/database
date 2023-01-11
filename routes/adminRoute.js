@@ -121,11 +121,11 @@ router.post("/addpizza", verifyToken, upload.single('file'), (req, res, next) =>
 })
 
 router.get('/getallpizza', verifyToken, (req, res, next) => {
-    Pizza.find({}, (err, pizzas) => {
+    Pizza.find({}, (err, pizza) => {
         if (err) {
             res.status(500).json({ errmsg: err })
         }
-        res.status(200).json({ msg: pizzas })
+        res.status(200).json({ msg: pizza })
     })
 })
 
