@@ -190,11 +190,11 @@ router.get('/read', (req, res, next) => {
 })
 
 router.get('/getallpizza', verifyToken, (req, res, next) => {
-    Pizza.find({}, (err, pizza) => {
+    Pizza.find({}, (err, pizzas) => {
         if (err) {
             res.status(500).json({ errmsg: err })
         }
-        res.status(200).json({ msg: pizza })
+        res.status(200).json({ msg: pizzas })
     })
 })
 
@@ -403,11 +403,11 @@ router.post('/addtocart', verifyToken, function (req, res, next) {
 
 
 router.get('/getcartitem', verifyToken, (req, res, next) => {
-    Cart.find({ whichuser: req.userId }, (err, pizza) => {
+    Cart.find({ whichuser: req.userId }, (err, pizzas) => {
         if (err) {
             res.status(500).json({ error: err })
         }
-        res.send(pizza)
+        res.send(pizzas)
     })
 })
 
@@ -484,12 +484,12 @@ router.post('/deletefromcart', verifyToken, function (req, res, next) {
 
 
 router.get('/emptycheck', verifyToken, (req, res, next) => {
-    Cart.find({ whichuser: req.userId }, (err, pizza) => {
+    Cart.find({ whichuser: req.userId }, (err, pizzas) => {
         if (err) {
             res.status(500).json({ msg: err })
         }
 
-        if (pizza.length == 0) {
+        if (pizzas.length == 0) {
             res.json({ msg: "yes empty cart" })
         }
         else {
