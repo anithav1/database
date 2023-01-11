@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
-const url = 'mongodb+srv://anithav:anithav@cluster0.msc5chm.mongodb.net/Foodapplication?retryWrites=true&w=majority'
+const url = 'mongodb+srv://anithav:anithav@cluster0.msc5chm.mongodb.net/Foodapp?retryWrites=true&w=majority'
 var bodyParser = require('body-parser')
 var cors = require('cors')
 const app = express()
