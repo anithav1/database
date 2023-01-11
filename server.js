@@ -47,6 +47,6 @@ app.use('/admin', adminRoutes)
 
 // print console message
 app.listen(PORT, () => {
-    console.log(`Listing onnn port ${PORT}`);
+    console.log(`Listeing onnn port ${PORT}`);
 })
 
