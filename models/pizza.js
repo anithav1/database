@@ -15,7 +15,7 @@ var pizzaSchema = mongoose.Schema({
 
     },
     pizzaimage: {
-        type: jpg,
+        type: String,
     },
     createdAt: {type: Date, default: Date.now}
 })
