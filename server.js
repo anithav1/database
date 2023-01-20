@@ -15,12 +15,6 @@ const PORT = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
-app.useStaticFiles(new StaticFileOptions)
-    {
-        FileProvider = new PhysicalFileProvider
-    (Path.Combine(env.ContentRootPath, "https://anifoodangular.onrender.com/src/assets/pizza")),
-    RequestPath = "/https://anifoodangular.onrender.com/src/assets/pizza"
-};
 app.use(function (request, response, next) {
     response.header("Access-Control-Allow-Origin", "*");
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
