@@ -92,7 +92,7 @@ router.delete("/deleteuser/:id", verifyToken, (req, res, next) => {
 var storage = multer.diskStorage({
 
     destination: (req, file, callBack) => {
-        callBack(null, 'https://anifoodangular.onrender.com/src/assets/pizza')
+        callBack(null, 'C:/Users/HP/OneDrive/Desktop/foodappangular/frontend/src/assets/pizza')
     },
     filename: (req, file, callBack) => {
         callBack(null, `${file.originalname}`)
