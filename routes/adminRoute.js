@@ -75,27 +75,27 @@ router.delete("/deleteuser/:id", verifyToken, (req, res, next) => {
 
 // addpizza image
 
-// function getTime() {
-//     var today = new Date().toLocaleDateString()
-//     today = today.toString().replace('/', '-')
-//     today = today.replace('/', '-')
+function getTime() {
+    var today = new Date().toLocaleDateString()
+    today = today.toString().replace('/', '-')
+    today = today.replace('/', '-')
 
-//     const date = new Date();
-//     let h = date.getHours();
-//     let m = date.getMinutes();
-//     let s = date.getSeconds();
+    const date = new Date();
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = date.getSeconds();
 
-//     today += '-' + h + '-' + m + '-' + s
+    today += '-' + h + '-' + m + '-' + s
 
-//     return today;
-// }
+    return today;
+}
 var storage = multer.diskStorage({
 
     destination: (req, file, callBack) => {
-        callBack(null, 'C:/Users/HP/OneDrive/Desktop/foodappangular/frontend/src/assets/pizza')
+        callBack(null, 'https://anifoodangular.onrender.com/src/assets/pizza')
     },
     filename: (req, file, callBack) => {
-        callBack(null, `${file.originalname}`)
+        callBack(null, `${getTime()}-${file.originalname}`)
     }
 })
 var upload = multer({ storage: storage })
